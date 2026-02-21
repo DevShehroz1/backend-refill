@@ -37,7 +37,6 @@ export default async function handler(req, res) {
 
     const json = await response.json();
 
-    // If Shopify returns errors, show them
     if (json.errors) {
       return res.status(500).json({ ok: false, message: "Shopify GraphQL error", errors: json.errors });
     }
